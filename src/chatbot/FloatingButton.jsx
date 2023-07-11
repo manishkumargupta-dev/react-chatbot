@@ -31,9 +31,9 @@ const CountBadge = styled.span`
   font-weight: bold;
 `;
 
-const FloatingButton = ({ unreadCount }) => {
+const FloatingButton = ({ unreadCount, onClick }) => {
   return (
-    <Button>
+    <Button onClick={onClick}>
       <FontAwesomeIcon icon={faMessage} size="2x" />
       {unreadCount > 0 && <CountBadge>{unreadCount}</CountBadge>}
     </Button>
