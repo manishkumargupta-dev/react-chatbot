@@ -16,10 +16,26 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const FloatingButton = () => {
+const CountBadge = styled.span`
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  height: 16px;
+  width: 16px;
+  border-radius: 16px;
+  padding: 6px;
+
+  background-color: #fa3e3e;
+  color: white;
+  font-weight: bold;
+`;
+
+const FloatingButton = ({ unreadCount }) => {
   return (
     <Button>
       <FontAwesomeIcon icon={faMessage} size="2x" />
+      {unreadCount > 0 && <CountBadge>{unreadCount}</CountBadge>}
     </Button>
   );
 };
